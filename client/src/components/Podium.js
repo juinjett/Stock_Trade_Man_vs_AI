@@ -11,6 +11,20 @@ class Podium extends Component {
 
     podiumJSX.push(<br />);
     if (this.props.currentData.length > 0 && this.props.data.length === this.props.currentData.length && !this.props.gettingNewStock) {
+      if (podium[0].name == "User") {
+        podiumJSX.push(
+          <div className="podium">
+            <p><span style={{"font-weight":"bold", "color":"green"}}>Winner Winner Chicken Diner! </span></p>
+          </div>
+        )
+      }
+      else {
+        podiumJSX.push(
+          <div className="podium">
+            <p><span style={{"font-weight":"bold", "color":"red"}}>Better Luck Next Time. Please Try Again! </span></p>
+          </div>
+        )
+      }
       podiumJSX.push(
         <div className="podium">
           <p><span style={{"font-weight":"bold", "color":"white"}}>1st {podium[0].name}: ${podium[0].stockValue.toFixed(2)}</span></p>
